@@ -1,30 +1,78 @@
 <script lang="ts">
-  export let name: string;
+  import Gallery from './components/Gallery.svelte';
 </script>
 
 <main>
-  <h1>{name}</h1>
-  <p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+  <div id="header">
+    <div id="logo">
+      <a href="https://kota-yata.com"><h1>KOTA-YATA pics</h1></a>
+    </div>
+    <div id="search_box">
+      <label id="search_box_contents">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search tags" name="search" id="search" />
+      </label>
+    </div>
+  </div>
+  <div id="img_container">
+    <Gallery />
+  </div>
 </main>
 
 <style lang="scss">
+  @import './assets/definition.scss';
+
   main {
-    text-align: center;
-    padding: 1em;
-    max-width: 240px;
-    margin: 0 auto;
-  }
-
-  h1 {
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4em;
-    font-weight: 100;
-  }
-
-  @media (min-width: 640px) {
-    main {
-      max-width: none;
+    font-family: 'Poppins';
+    #header {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 20px;
+      #logo {
+        h1 {
+          margin: 0;
+          font-size: 35px;
+          color: $pg-green;
+        }
+      }
+      #search_box {
+        display: flex;
+        align-items: center;
+        background: $pg-green;
+        width: 30vw;
+        border-radius: 10px;
+        &_contents {
+          cursor: text;
+          display: flex;
+          align-items: center;
+          padding-left: 20px;
+          padding-right: 10px;
+          width: calc(100% - 30px);
+          height: 100%;
+          color: $general-white;
+          i {
+            font-size: 25px;
+            padding-right: 10px;
+          }
+          input {
+            height: 100%;
+            width: calc(100% - 35px);
+            background: transparent;
+            font-size: 20px;
+            color: $general-white; // 指定しないとinputのデフォルトカラーになる
+            &::placeholder {
+              color: $light-white;
+            }
+          }
+        }
+      }
     }
+  }
+
+  #img_container {
+    @extend %center;
+
+    margin-top: 5vh;
+    width: 75vw;
   }
 </style>

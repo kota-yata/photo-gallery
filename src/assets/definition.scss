@@ -1,0 +1,18 @@
+// 色の変数
+$pg-green: #67bf94;
+$general-black: #333333;
+$general-white: #f5f5f5;
+$light-white: #8ed1b0;
+
+// ロゴのフォント
+@font-face {
+  font-family: 'Poppins';
+  src: local('Poppins Bold'), src('./fonts/Poppins/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+%center {
+  margin: 0 auto;
+  text-align: center;
+}
