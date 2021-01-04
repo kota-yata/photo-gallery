@@ -1,0 +1,8 @@
+node_modules/
+.vscode/
+rollup.config.js
+public/
+package.json
+tsconfig.json
+README.md
+.prettier.json
