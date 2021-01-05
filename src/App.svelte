@@ -111,7 +111,7 @@
             width: calc(100% - 15px);
             i {
               font-size: 15px;
-              padding-right: 5px;
+              padding: 5px;
             }
             input {
               width: calc(100% - 16px);
