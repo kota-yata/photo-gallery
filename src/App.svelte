@@ -43,17 +43,21 @@
       padding: 15px 20px;
       #logo {
         h1 {
+          @extend %gradient-text;
           margin: 0;
           font-size: 35px;
-          color: $pg-green;
         }
       }
       #search_box {
+        position: relative;
         display: flex;
         align-items: center;
-        background: $pg-green;
         width: 30vw;
-        border-radius: 10px;
+        border: double 4px transparent;
+        border-radius: 80px;
+        background-image: linear-gradient(white, white), $pg-gradient;
+        background-origin: border-box;
+        background-clip: content-box, border-box;
         &_contents {
           cursor: text;
           display: flex;
@@ -62,8 +66,8 @@
           padding-right: 10px;
           width: calc(100% - 30px);
           height: 100%;
-          color: $general-white;
           i {
+            @extend %gradient-text;
             font-size: 25px;
             padding-right: 10px;
           }
@@ -72,7 +76,7 @@
             width: calc(100% - 35px);
             background: transparent;
             font-size: 20px;
-            color: $general-white; // 指定しないとinputのデフォルトカラーになる
+            color: $general-black; // 指定しないとinputのデフォルトカラーになる
             &::placeholder {
               color: $light-white;
             }

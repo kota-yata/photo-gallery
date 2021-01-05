@@ -54,10 +54,10 @@
           width: 100%;
           background: $transparent-white;
           .tag {
+            @extend %gradient-text;
             cursor: pointer;
             padding: 5px;
             margin: 2px 5px;
-            color: $pg-green;
             border-radius: 10px;
           }
         }

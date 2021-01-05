@@ -12,12 +12,12 @@
 
   .footer {
     @extend %center;
-
+    @extend %gradient-text;
     width: 100vw;
-    border-top: 2px $pg-green solid;
+    border-top: 2px solid;
+    border-image: $pg-gradient 1;
     margin-top: 3vh;
     padding: 20px 0;
-    color: $pg-green;
     &-license {
       display: flex;
       flex-direction: column;
