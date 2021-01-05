@@ -1,5 +1,17 @@
 <script lang="ts">
+  import Footer from './components/Footer.svelte';
   import Gallery from './components/Gallery.svelte';
+  import { subjectArray } from './components/Data.svelte';
+
+  let searchWords: string;
+  $: resultArray = (): imageArray[] => {
+    if (searchWords === 'ALL' || !searchWords) {
+      return subjectArray;
+    }
+    return subjectArray.filter((img) => {
+      img.tags.includes(searchWords);
+    });
+  };
 </script>
 
 <main>
@@ -10,13 +22,14 @@
     <div id="search_box">
       <label id="search_box_contents">
         <i class="fas fa-search"></i>
-        <input type="text" placeholder="Search tags" name="search" id="search" />
+        <input type="text" placeholder="hollywood" name="search" id="search" bind:value="{searchWords}" />
       </label>
     </div>
   </div>
   <div id="img_container">
-    <Gallery />
+    <Gallery resultArray="{resultArray()}" />
   </div>
+  <Footer />
 </main>
 
 <style lang="scss">
@@ -71,8 +84,39 @@
 
   #img_container {
     @extend %center;
-
     margin-top: 5vh;
-    width: 75vw;
+    width: 80vw;
+  }
+
+  @media screen and (max-width: 750px) {
+    main {
+      #header {
+        padding: 10px;
+        #logo {
+          h1 {
+            font-size: 20px;
+          }
+        }
+        #search_box {
+          width: 40vw;
+          &_contents {
+            padding-left: 10px;
+            padding-right: 5px;
+            width: calc(100% - 15px);
+            i {
+              font-size: 15px;
+              padding-right: 5px;
+            }
+            input {
+              width: calc(100% - 16px);
+              font-size: 13px;
+            }
+          }
+        }
+      }
+      #img_container {
+        width: 100vw;
+      }
+    }
   }
 </style>

@@ -1,53 +1,18 @@
 <script lang="ts">
-  const imageData: string[][] = [
-    ['la', 'citadel', 'parking'],
-    ['la', 'redondo', 'beach'],
-    ['la', 'redondo', 'pier'],
-    ['la', 'beverlyhills'],
-    ['la', 'originalfarmersmarket', 'crowded'],
-    ['mug', 'mac'],
-    ['la', 'hollywood'],
-    ['la', 'redondo', 'pier', 'fishing'],
-    ['la', 'hollywood', 'shopping'],
-    ['la', 'beverlyhills', 'park'],
-    ['la', 'citadel', 'starbucks'],
-    ['la', 'ucla'],
-    ['la', 'ucla'],
-    ['la', 'ucla'],
-    ['la', 'santamonica', 'traffic'],
-    ['la', 'santamonica'],
-    ['la', 'santamonica'],
-    ['la', 'santamonica', 'sea'],
-    ['la', 'carlsbad', 'road'],
-    ['la', 'hollywood', 'universalstudios'],
-    ['la', 'hollywood', 'universalstudios'],
-    ['la', 'hollywood', 'universalstudios'],
-    ['la', 'hollywood', 'universalstudios'],
-    ['la', 'hollywood', 'universalstudios'],
-    ['keyboard', 'hhkb'],
-    ['microphone', 'marantz'],
-    ['la', 'disneyland', 'anaheim'],
-    ['la', 'redondo'],
-    ['la', 'hollywood'],
-    ['la', 'redondo', 'beach'],
-    ['la', 'hollywood', 'roosevelthotel'],
-    ['la', 'redondo', 'beach'],
-    ['la', 'redondo', 'pier'],
-    ['la', 'redondo', 'tree'],
-    ['la', 'redondo', 'bike'],
-  ];
-
-  window.addEventListener('DOMContentLoaded', (): void => {
-    lazyload();
-  });
+  export let resultArray: imageArray[];
 </script>
 
 <div class="photo-container">
-  {#each imageData as tags, i}
+  {#each resultArray as { index, tags }, i}
     <div class="photo">
-      <img alt="img" class="lazyload" data-src="./img-pc/{i}.jpg" />
-      <div class="tag-container">
-        {#each tags as tag, i}<span class="tag {tag}">#{tag}</span>{/each}
+      <div class="for-tag">
+        <a class="data-img" href="https://pics.kota-yata.com/img-pc/{i}.jpg"><img
+            alt="img"
+            src="./img-pc/{index}.jpg"
+          /></a>
+        <div class="tag-container">
+          {#each tags as tag, i}<span class="tag {tag}">#{tag}</span>{/each}
+        </div>
       </div>
     </div>
   {/each}
@@ -57,7 +22,7 @@
   @import '../assets/definition.scss';
 
   .photo-container {
-    @extend %center;
+    display: relative;
     column-count: 3;
     column-gap: 0;
     .photo {
@@ -65,16 +30,90 @@
       page-break-inside: avoid;
       break-inside: avoid;
       display: inline-block;
-      img {
-        width: 23vw;
+      .for-tag {
+        position: relative;
+        width: 100%;
+        .data-img {
+          cursor: zoom-in;
+          img {
+            filter: contrast(80%);
+            width: 25vw;
+            transition: 0.2s;
+          }
+        }
+        .tag-container {
+          position: absolute;
+          bottom: 5px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          transition: 0.2s;
+          opacity: 0;
+          visibility: hidden;
+          text-align: left;
+          width: 100%;
+          background: $transparent-white;
+          .tag {
+            cursor: pointer;
+            padding: 5px;
+            margin: 2px 5px;
+            color: $pg-green;
+            border-radius: 10px;
+          }
+        }
+        .data-img:hover {
+          & + .tag-container {
+            opacity: 1;
+            visibility: visible;
+            transition: 0.2s;
+          }
+        }
+        .tag-container:hover {
+          opacity: 1;
+          visibility: visible;
+          transition: 0.2s;
+        }
       }
-      .tag-container {
-        .tag {
-          padding: 5px;
-          margin: 2px 5px;
-          background: $pg-green;
-          color: $general-white;
-          border-radius: 10px;
+    }
+  }
+
+  @media screen and (max-width: 1300px) {
+    .photo-container {
+      column-count: 2;
+      .photo {
+        .for-tag {
+          .data-img img {
+            width: 38vw;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    .photo-container {
+      .photo {
+        .for-tag {
+          .tag-container {
+            width: 100%;
+            position: relative;
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    .photo-container {
+      column-count: 1;
+      .photo {
+        padding: 10px 0;
+        .for-tag {
+          .data-img img {
+            width: 100vw;
+          }
         }
       }
     }
