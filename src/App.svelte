@@ -40,6 +40,7 @@
     #header {
       display: flex;
       justify-content: space-between;
+      vertical-align: middle;
       padding: 15px 20px;
       #logo {
         h1 {
@@ -53,8 +54,8 @@
         display: flex;
         align-items: center;
         width: 30vw;
-        border: double 4px transparent;
-        border-radius: 80px;
+        border: double 3px transparent;
+        border-radius: 50px;
         background-image: linear-gradient(white, white), $pg-gradient;
         background-origin: border-box;
         background-clip: content-box, border-box;
@@ -96,6 +97,7 @@
     main {
       #header {
         padding: 10px;
+        height: 40px;
         #logo {
           h1 {
             font-size: 20px;

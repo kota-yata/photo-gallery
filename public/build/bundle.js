@@ -385,15 +385,15 @@ var app = (function () {
     			div1 = element("div");
     			h2 = element("h2");
     			h2.textContent = "© 2021 Kota Yatagai";
-    			attr_dev(span, "class", "footer-license-words svelte-1g6szdq");
+    			attr_dev(span, "class", "footer-license-words svelte-58sjbt");
     			add_location(span, file, 2, 4, 56);
-    			attr_dev(div0, "class", "footer-license svelte-1g6szdq");
+    			attr_dev(div0, "class", "footer-license svelte-58sjbt");
     			add_location(div0, file, 1, 2, 23);
-    			attr_dev(h2, "class", "svelte-1g6szdq");
+    			attr_dev(h2, "class", "svelte-58sjbt");
     			add_location(h2, file, 5, 4, 201);
-    			attr_dev(div1, "class", "footer-name svelte-1g6szdq");
+    			attr_dev(div1, "class", "footer-name svelte-58sjbt");
     			add_location(div1, file, 4, 2, 171);
-    			attr_dev(div2, "class", "footer svelte-1g6szdq");
+    			attr_dev(div2, "class", "footer svelte-58sjbt");
     			add_location(div2, file, 0, 0, 0);
     		},
     		l: function claim(nodes) {
@@ -484,7 +484,7 @@ var app = (function () {
     			span = element("span");
     			t0 = text("#");
     			t1 = text(t1_value);
-    			attr_dev(span, "class", span_class_value = "tag " + /*tag*/ ctx[5] + " svelte-1yadf54");
+    			attr_dev(span, "class", span_class_value = "tag " + /*tag*/ ctx[5] + " svelte-1qatwqs");
     			add_location(span, file$1, 12, 32, 407);
     		},
     		m: function mount(target, anchor) {
@@ -495,7 +495,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			if (dirty & /*resultArray*/ 1 && t1_value !== (t1_value = /*tag*/ ctx[5] + "")) set_data_dev(t1, t1_value);
 
-    			if (dirty & /*resultArray*/ 1 && span_class_value !== (span_class_value = "tag " + /*tag*/ ctx[5] + " svelte-1yadf54")) {
+    			if (dirty & /*resultArray*/ 1 && span_class_value !== (span_class_value = "tag " + /*tag*/ ctx[5] + " svelte-1qatwqs")) {
     				attr_dev(span, "class", span_class_value);
     			}
     		},
@@ -550,16 +550,16 @@ var app = (function () {
     			t1 = space();
     			attr_dev(img, "alt", "img");
     			if (img.src !== (img_src_value = "./img-pc/" + /*index*/ ctx[1] + ".jpg")) attr_dev(img, "src", img_src_value);
-    			attr_dev(img, "class", "svelte-1yadf54");
+    			attr_dev(img, "class", "svelte-1qatwqs");
     			add_location(img, file$1, 7, 77, 256);
-    			attr_dev(a, "class", "data-img svelte-1yadf54");
+    			attr_dev(a, "class", "data-img svelte-1qatwqs");
     			attr_dev(a, "href", a_href_value = "https://pics.kota-yata.com/img-pc/" + /*i*/ ctx[4] + ".jpg");
     			add_location(a, file$1, 7, 8, 187);
-    			attr_dev(div0, "class", "tag-container svelte-1yadf54");
+    			attr_dev(div0, "class", "tag-container svelte-1qatwqs");
     			add_location(div0, file$1, 11, 8, 347);
-    			attr_dev(div1, "class", "for-tag svelte-1yadf54");
+    			attr_dev(div1, "class", "for-tag svelte-1qatwqs");
     			add_location(div1, file$1, 6, 6, 157);
-    			attr_dev(div2, "class", "photo svelte-1yadf54");
+    			attr_dev(div2, "class", "photo svelte-1qatwqs");
     			add_location(div2, file$1, 5, 4, 131);
     		},
     		m: function mount(target, anchor) {
@@ -640,7 +640,7 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(div, "class", "photo-container svelte-1yadf54");
+    			attr_dev(div, "class", "photo-container svelte-1qatwqs");
     			add_location(div, file$1, 3, 0, 53);
     		},
     		l: function claim(nodes) {
@@ -849,33 +849,33 @@ var app = (function () {
     			create_component(gallery.$$.fragment);
     			t4 = space();
     			create_component(footer.$$.fragment);
-    			attr_dev(h1, "class", "svelte-1rppqrz");
+    			attr_dev(h1, "class", "svelte-1iy2pti");
     			add_location(h1, file$2, 17, 38, 490);
     			attr_dev(a, "href", "https://kota-yata.com");
     			add_location(a, file$2, 17, 6, 458);
     			attr_dev(div0, "id", "logo");
     			add_location(div0, file$2, 16, 4, 436);
-    			attr_dev(i, "class", "fas fa-search svelte-1rppqrz");
+    			attr_dev(i, "class", "fas fa-search svelte-1iy2pti");
     			add_location(i, file$2, 21, 8, 602);
     			attr_dev(input, "type", "text");
     			attr_dev(input, "placeholder", "hollywood");
     			attr_dev(input, "name", "search");
     			attr_dev(input, "id", "search");
-    			attr_dev(input, "class", "svelte-1rppqrz");
+    			attr_dev(input, "class", "svelte-1iy2pti");
     			add_location(input, file$2, 22, 8, 640);
     			attr_dev(label, "id", "search_box_contents");
-    			attr_dev(label, "class", "svelte-1rppqrz");
+    			attr_dev(label, "class", "svelte-1iy2pti");
     			add_location(label, file$2, 20, 6, 561);
     			attr_dev(div1, "id", "search_box");
-    			attr_dev(div1, "class", "svelte-1rppqrz");
+    			attr_dev(div1, "class", "svelte-1iy2pti");
     			add_location(div1, file$2, 19, 4, 533);
     			attr_dev(div2, "id", "header");
-    			attr_dev(div2, "class", "svelte-1rppqrz");
+    			attr_dev(div2, "class", "svelte-1iy2pti");
     			add_location(div2, file$2, 15, 2, 414);
     			attr_dev(div3, "id", "img_container");
-    			attr_dev(div3, "class", "svelte-1rppqrz");
+    			attr_dev(div3, "class", "svelte-1iy2pti");
     			add_location(div3, file$2, 26, 2, 776);
-    			attr_dev(main, "class", "svelte-1rppqrz");
+    			attr_dev(main, "class", "svelte-1iy2pti");
     			add_location(main, file$2, 14, 0, 405);
     		},
     		l: function claim(nodes) {

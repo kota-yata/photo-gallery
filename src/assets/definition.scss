@@ -11,7 +11,7 @@ $transparent-white: rgba(245, 245, 245, 0.8);
 // ロゴのフォント
 @font-face {
   font-family: 'Poppins';
-  src: local('Poppins Bold'), src('./fonts/Poppins/Poppins-Bold.ttf') format('truetype');
+  src: local('Poppins Bold'), url('../fonts/Poppins/Poppins-Bold.ttf') format('truetype');
   font-weight: 700;
   font-display: swap;
 }

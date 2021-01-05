@@ -53,6 +53,7 @@
           text-align: left;
           width: 100%;
           background: $transparent-white;
+          overflow-x: scroll;
           .tag {
             @extend %gradient-text;
             cursor: pointer;
@@ -95,7 +96,7 @@
       .photo {
         .for-tag {
           .tag-container {
-            width: 100%;
+            width: 100vw;
             position: relative;
             opacity: 1;
             visibility: visible;
