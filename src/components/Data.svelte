@@ -35,6 +35,7 @@
     ['la', 'redondo', 'pier'],
     ['la', 'redondo', 'tree'],
     ['la', 'redondo', 'bike'],
+    ['building', 'sunset'],
   ];
 
   interface imageArray {
