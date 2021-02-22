@@ -45,7 +45,7 @@
 
   export const subjectArray: imageArray[] = [];
 
-  for (let i = 0; i < imageData.length; i++) {
+  for (let i = imageData.length - 1; i >= 0; i--) {
     subjectArray.push({
       index: i,
       tags: imageData[i],

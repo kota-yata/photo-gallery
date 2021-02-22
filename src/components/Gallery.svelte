@@ -1,5 +1,10 @@
 <script lang="ts">
   export let resultArray: imageArray[];
+  const inputTagNameToSearch = (tag: string): void => {
+    const searchInput: HTMLInputElement | null = document.getElementById('search') as HTMLInputElement;
+    if (!searchInput) throw new Error("search input doesn't exist");
+    searchInput.value = tag;
+  };
 </script>
 
 <div class="photo-container">
@@ -11,7 +16,14 @@
             src="./img-pc/{index}.jpg"
           /></a>
         <div class="tag-container">
-          {#each tags as tag, i}<span class="tag {tag}">#{tag}</span>{/each}
+          {#each tags as tag, i}
+            <button
+              class="tag {tag}"
+              on:click="{() => {
+                inputTagNameToSearch(tag);
+              }}"
+            >#{tag}</button>
+          {/each}
         </div>
       </div>
     </div>
@@ -60,6 +72,7 @@
             padding: 5px;
             margin: 2px 5px;
             border-radius: 10px;
+            font-size: 15px;
           }
         }
         .data-img:hover {

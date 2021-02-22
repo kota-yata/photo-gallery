@@ -8,14 +8,14 @@
     if (searchWords === 'ALL' || !searchWords) {
       return subjectArray;
     }
-    return subjectArray.filter((img) => {
-      img.tags.includes(searchWords);
-    });
+    const filtered: imageArray[] = subjectArray.filter((img) => img.tags.includes(searchWords));
+    console.log(filtered);
+    return filtered;
   };
 </script>
 
 <main>
-  <div id="header">
+  <header id="header">
     <div id="logo">
       <a href="https://kota-yata.com"><h1>KOTA-YATA pics</h1></a>
     </div>
@@ -25,7 +25,7 @@
         <input type="text" placeholder="hollywood" name="search" id="search" bind:value="{searchWords}" />
       </label>
     </div>
-  </div>
+  </header>
   <div id="img_container">
     <Gallery resultArray="{resultArray()}" />
   </div>

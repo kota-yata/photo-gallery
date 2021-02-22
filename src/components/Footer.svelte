@@ -1,11 +1,11 @@
-<div class="footer">
+<footer class="footer">
   <div class="footer-license">
     <span class="footer-license-words">All photos can be downloaded and used for free on any purpose</span>
   </div>
   <div class="footer-name">
     <h2>© 2021 Kota Yatagai</h2>
   </div>
-</div>
+</footer>
 
 <style lang="scss">
   @import '../assets/definition.scss';
